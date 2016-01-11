@@ -34,7 +34,25 @@ massive.connect({
   }
   else
   {
+      db.article.count({},function(err,count)
+      {
+        if (err)
+        {
+          console.error(err);
+        }
+        else
+        {
+          console.log({articleCount:count});
+        }
+      });
+
       require('./router')(express,db,cacheRedis,sessionRedis);
+
+      setTimeout(function(){
+        console.log('timeouted');
+        require('request').get('http://localhost:'+process.env.LISTEN_PORT+'/links',{});
+      },500);
+
   }
 
 });

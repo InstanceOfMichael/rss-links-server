@@ -2,14 +2,12 @@
 
 module.exports = function(express,db,cacheRedis,sessionRedis)
 {
-      db.myTable.find();
-
       express.use(require('body-parser').json());
       express.use(require('connect-timeout')(30 * 1000));
       express.use(require('cors')());
 
       express.get('/links',
-            require('./lib/LinksController')(cacheRedis)
+            require('./lib/ArticleSearchController')(db,cacheRedis)
             // function(req,res){
             //     console.log({hit:1});
             //

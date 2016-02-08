@@ -1,6 +1,13 @@
 require('dotenv').config({});
 
 process.env.LISTEN_PORT = process.env.LISTEN_PORT||9050;
+process.env.POSTGRES_CONNECTIONSTRING = process.env.POSTGRES_CONNECTIONSTRING||'postgres://rss:password@localhost:5432/rssdb';
+
+var db = require('knex')({
+  client: 'pg',
+  connection: process.env.POSTGRES_CONNECTIONSTRING,
+  searchPath: 'knex,public'
+});
 
 var massive = require("massive");
 var express = require('express')();

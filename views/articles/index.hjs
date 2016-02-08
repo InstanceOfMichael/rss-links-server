@@ -5,8 +5,8 @@
       <p>- - - -Begin content</p>
         {{#articles}}
           <p data-id="{{id}}">
-            <a href="{{source_url}}">{{title}}</a>
-            <a href="{{url}}">comments</a>
+            <a href="{{source_href}}">{{title}}</a>
+            <a href="{{href}}">comments</a>
           </p>
         {{/articles}}
       <p>- - - -End content</p>

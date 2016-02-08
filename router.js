@@ -10,5 +10,5 @@ module.exports = function(express,db,cacheRedis,sessionRedis)
       express.use(require('cors')());
 
       express.get('/articles',controller.index);
-      // express.get('/articles/:slug',controller.show);
+      express.get('/articles/:slug',controller.show);
 };

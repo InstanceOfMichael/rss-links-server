@@ -1,7 +1,16 @@
 {{<layout}}
   {{$content}}
-    <p>&rarr; &rarr;Begin content</p>
-    {{> welcome}}
-    <p>&rarr; &rarr;End content</p>
+
+    <div>
+      <p>- - - -Begin content</p>
+        {{#article}}
+          <p data-id="{{id}}">
+            <a href="{{source_href}}">{{title}}</a>
+            <a href="{{href}}">comments</a>
+          </p>
+        {{/article}}
+      <p>- - - -End content</p>
+    </div>
+
   {{/content}}
 {{/layout}}

@@ -2,9 +2,9 @@ require('dotenv').config({});
 
 process.env.LISTEN_PORT = process.env.LISTEN_PORT||9050;
 
-var massive = require("massive");
-var express = require('express')();
-var Redis = require('ioredis');
+const express = require('express')();
+const db = {/* TODO */};
+const Redis = require('ioredis');
 
 var cacheRedis = new Redis({
   port:     process.env.REDIS_PORT||6379,          // Redis port
@@ -24,35 +24,8 @@ var sessionRedis = new Redis({
 // todo define RabbitMQ JobQueue or redis JobQueue
 // todo define logging service
 
-massive.connect({
-  connectionString:process.env.DB_POSTGRES||'postgres://rss:password@localhost:5432/rssdb',
-}, function(err,db){
+require('./router')(express,db,cacheRedis,sessionRedis);
 
-  if (err)
-  {
-      throw err;
-  }
-  else
-  {
-      db.article.count({},function(err,count)
-      {
-        if (err)
-        {
-          console.error(err);
-        }
-        else
-        {
-          console.log({articleCount:count});
-        }
-      });
-
-      require('./router')(express,db,cacheRedis,sessionRedis);
-
-      setTimeout(function(){
-        console.log('timeouted');
-        require('request').get('http://localhost:'+process.env.LISTEN_PORT+'/links',{});
-      },500);
-
-  }
-
+var server = express.listen(process.env.LISTEN_PORT, function () {
+    console.log('Listing on port: ' + process.env.LISTEN_PORT);
 });

@@ -1,0 +1,16 @@
+{{<layout}}
+  {{$content}}
+
+    <div>
+      <p>- - - -Begin content</p>
+        {{#articles}}
+          <p data-id="{{id}}">
+            <a href="{{source_url}}">{{title}}</a>
+            <a href="{{url}}">comments</a>
+          </p>
+        {{/articles}}
+      <p>- - - -End content</p>
+    </div>
+
+  {{/content}}
+{{/layout}}

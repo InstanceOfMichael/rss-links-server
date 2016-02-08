@@ -1,0 +1,7 @@
+{{<layout}}
+  {{$content}}
+    <p>&rarr; &rarr;Begin content</p>
+    {{> welcome}}
+    <p>&rarr; &rarr;End content</p>
+  {{/content}}
+{{/layout}}

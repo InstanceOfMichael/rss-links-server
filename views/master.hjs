@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/css/app.css' />
+    {{#metaTags}}
+      <meta name="{{name}}" value="{{value}}" />
+    {{/metaTags}}
+  </head>
+  <body>
+    <header>HEADER</header>
+    {{$content}} welcome! {{/content}}
+    <footer>FOOTER</footer>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script>
+      {{#data}}
+      var data = {{{data}}};
+      {{/data}}
+    </script>
+  </body>
+</html>

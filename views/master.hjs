@@ -3,6 +3,7 @@
   <head>
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/assets/css/app.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {{#metaTags}}
       <meta name="{{name}}" value="{{value}}" />
     {{/metaTags}}

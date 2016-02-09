@@ -1,15 +1,26 @@
 {{<layout}}
   {{$content}}
 
-    <div>
-      <p>- - - -Begin content</p>
-        {{#article}}
-          <p data-id="{{id}}">
-            <a href="{{source_href}}">{{title}}</a>
-            <a href="{{href}}">comments</a>
-          </p>
-        {{/article}}
-      <p>- - - -End content</p>
+    <ol class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li><a href="/articles">Articles</a></li>
+      <li class="active">{{article.title}}</li>
+    </ol>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+            <h1 data-id="{{article.id}}">
+              <a href="{{article.source_href}}">{{article.title}}</a>
+              <small>
+                <a href="{{article.href}}#comments">comments</a>
+              </small>
+            </h1>
+            <p class="lead">
+              {{article.description}}
+            </p>
+        </div>
+      </div>
     </div>
 
   {{/content}}

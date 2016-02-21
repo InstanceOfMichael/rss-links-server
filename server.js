@@ -1,6 +1,6 @@
 require('dotenv').config({});
 
-process.env.LISTEN_PORT = process.env.LISTEN_PORT||9050;
+process.env.LISTEN_PORT = process.env.LISTEN_PORT||3001;
 
 const express = require('express')();
 const db = {/* TODO */};

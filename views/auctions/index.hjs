@@ -3,8 +3,12 @@
 
     <ol class="breadcrumb">
       <li><a href="/">Home</a></li>
-      <li class="active">Articles</li>
+      <li class="active">Auctions</li>
     </ol>
+
+    <a href="/auctions/create">
+        <i class="fa fa-plus"></i> Create Listing
+    </a>
 
     <div class="container">
       <div class="row">

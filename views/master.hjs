@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="/assets/css/app.min.css" />
+    <link rel="stylesheet" href="/assets/css/app.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{#metaTags}}
       <meta name="{{name}}" value="{{value}}" />
@@ -12,7 +12,7 @@
     <header>HEADER</header>
     {{$content}} welcome! {{/content}}
     <footer>FOOTER</footer>
-    <script type="text/javascript" src="/assets/js/app.min.js"></script>
+    <script type="text/javascript" src="/assets/js/app.js"></script>
     <script>
       {{#data}}
       var data = {{{data}}};

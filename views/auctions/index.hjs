@@ -13,14 +13,14 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          {{#articles}}
+          {{#auctions.data}}
             <h6 data-id="{{id}}">
-              <a href="{{source_href}}">{{title}}</a>
+              <a href="{{source_href}}">{{name}}</a>
               <small>
-                <a href="{{href}}">comments</a>
+                <p class="text-muted">{{description}}</p>
               </small>
             </h6>
-          {{/articles}}
+          {{/auctions.data}}
         </div>
       </div>
     </div>
